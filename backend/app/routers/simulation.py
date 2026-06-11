@@ -6,8 +6,11 @@ router = APIRouter()
 
 @router.get("/simulate/", response_model=SimulationResult)
 def run_simulation():
+
     return SimulationResult(
         simulation_id=1,
-        result="Simulation endpoint ready",
-        score=85.5
+        decision="Approved",
+        revenue_delta=12.5,
+        risk_level="Low",
+        confidence_score=94.0
     )

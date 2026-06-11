@@ -7,6 +7,7 @@ from app.routers import (
     predict,
     datasets,
     statistics,
+    simulation,
 )
 
 app = FastAPI(
@@ -31,6 +32,7 @@ app.include_router(analytics.router)
 app.include_router(predict.router)
 app.include_router(datasets.router)
 app.include_router(statistics.router)
+app.include_router(simulation.router)
 
 @app.get("/")
 def root():
