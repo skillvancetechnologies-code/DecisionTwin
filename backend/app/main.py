@@ -1,24 +1,36 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import (
     health,
-    simulation,
-    analyze,
-    datasets,
     analytics,
-    predict
+    predict,
+    datasets,
+    statistics,
 )
 
-app = FastAPI(title="DecisionTwin API")
+app = FastAPI(
+    title="DecisionTwin API",
+    version="1.0.0"
+)
 
-# Routes
+# CORS for React Frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Routers
 app.include_router(health.router)
-app.include_router(simulation.router)
-app.include_router(analyze.router)
-app.include_router(datasets.router)
 app.include_router(analytics.router)
 app.include_router(predict.router)
-
+app.include_router(datasets.router)
+app.include_router(statistics.router)
 
 @app.get("/")
 def root():

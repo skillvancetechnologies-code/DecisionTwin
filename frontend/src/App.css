@@ -1,0 +1,99 @@
+.container {
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  background: #07152d;
+  padding: 30px;
+}
+
+.title {
+  font-size: 56px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #bfc9d9;
+  margin-bottom: 40px;
+}
+
+.analytics-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #1a2745;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 200px;
+}
+
+.chart-card {
+  width: 700px;
+  max-width: 90%;
+  margin: 30px auto;
+  background: #1a2745;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.result-card {
+  width: 450px;
+  max-width: 90%;
+  margin: 30px auto;
+  background: #1a2745;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.preview-card {
+  width: 95%;
+  margin: 30px auto;
+  background: #1a2745;
+  padding: 20px;
+  border-radius: 15px;
+  overflow-x: auto;
+}
+
+.columns {
+  margin-bottom: 20px;
+}
+
+.column-tag {
+  display: inline-block;
+  background: #2d3f68;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.preview-table th,
+.preview-table td {
+  border: 1px solid #444;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.preview-table th {
+  background: #243456;
+}
+
+.input {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}

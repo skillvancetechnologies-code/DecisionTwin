@@ -12,11 +12,12 @@ def load_dataset():
     if not os.path.exists(file_path):
         return None
 
-    df = pd.read_csv(file_path)
-    return df
+    return pd.read_csv(file_path)
 
 
+# =========================
 # Week 3 Analytics Function
+# =========================
 def get_baseline_metrics():
     df = load_dataset()
 
@@ -40,12 +41,63 @@ def get_baseline_metrics():
     }
 
 
+# =========================
 # Week 4 Prediction Function
+# =========================
 def predict_fraud(data: dict):
-    df = pd.DataFrame([data])
+
+    print("\n========== REQUEST RECEIVED ==========")
+    print(data)
+
+    sample = {
+        "Time": 0,
+        "V1": 0,
+        "V2": 0,
+        "V3": 0,
+        "V4": 0,
+        "V5": 0,
+        "V6": 0,
+        "V7": 0,
+        "V8": 0,
+        "V9": 0,
+        "V10": 0,
+        "V11": 0,
+        "V12": 0,
+        "V13": 0,
+        "V14": 0,
+        "V15": 0,
+        "V16": 0,
+        "V17": 0,
+        "V18": 0,
+        "V19": 0,
+        "V20": 0,
+        "V21": 0,
+        "V22": 0,
+        "V23": 0,
+        "V24": 0,
+        "V25": 0,
+        "V26": 0,
+        "V27": 0,
+        "V28": 0,
+        "Amount": 0
+    }
+
+    sample.update(data)
+
+    df = pd.DataFrame([sample])
+
+    print("\n========== MODEL INPUT ==========")
+    print(df.head())
+
+    print("\n========== COLUMNS ==========")
+    print(df.columns.tolist())
 
     prediction = model.predict(df)[0]
     probability = model.predict_proba(df)[0].max()
+
+    print("\n========== RESULT ==========")
+    print("Prediction:", prediction)
+    print("Confidence:", probability)
 
     return {
         "prediction": int(prediction),
