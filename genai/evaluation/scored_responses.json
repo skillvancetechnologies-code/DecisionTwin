@@ -1,0 +1,417 @@
+{
+  "generated_on": "2026-06-15",
+  "prompt_version": "v2",
+  "source": "synthetic-reference (LLM unavailable)",
+  "total": 25,
+  "passed": 25,
+  "failed": 0,
+  "axes": [
+    "Numerical Accuracy",
+    "Recommendation Soundness",
+    "Tone & Clarity",
+    "Risk Honesty",
+    "Hallucination Check"
+  ],
+  "results": [
+    {
+      "id": 1,
+      "bucket": "price",
+      "user_query": "What if I raise prices by 5%?",
+      "response": "Based on the simulation, revenue would move about 3.4%, and churn about 1.2%, and growth around 4.0%. The key risks are minor churn uptick, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 2,
+      "bucket": "price",
+      "user_query": "Raise prices by 10%.",
+      "response": "Based on the simulation, revenue would move about 6.8%, and churn about 2.1%, and growth around 4.5%. The key risks are churn risk, competitor response, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 3,
+      "bucket": "price",
+      "user_query": "Increase prices by 25%.",
+      "response": "Based on the simulation, revenue would move about 14.0%, and churn about 7.5%, and growth around 3.0%. The key risks are sharp churn, demand drop, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 4,
+      "bucket": "price",
+      "user_query": "Cut prices by 5%.",
+      "response": "Based on the simulation, revenue would move about 2.1%, and churn about 1.0%, and growth around 6.0%. The key risks are margin pressure, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 5,
+      "bucket": "price",
+      "user_query": "Lower prices by 15%.",
+      "response": "Based on the simulation, revenue would move about 6.0%, and churn about 2.5%, and growth around 9.0%. The key risks are margin erosion, price-war risk, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 6,
+      "bucket": "headcount",
+      "user_query": "Hire 5 more engineers.",
+      "response": "Based on the simulation, revenue would move about 2.5%, and churn about 0.0%, and growth around 5.0%. The key risks are payroll cost, ramp-up time, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 7,
+      "bucket": "headcount",
+      "user_query": "Add 10 sales reps.",
+      "response": "Based on the simulation, revenue would move about 8.0%, and churn about 0.5%, and growth around 7.0%. The key risks are ramp cost, quota risk, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 8,
+      "bucket": "headcount",
+      "user_query": "Lay off 3 ops staff.",
+      "response": "Based on the simulation, revenue would move about 0.5%, and churn about 1.5%, and growth around 1.0%. The key risks are service degradation, morale impact, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 9,
+      "bucket": "headcount",
+      "user_query": "Grow the team by 50%.",
+      "response": "Based on the simulation, revenue would move about 6.0%, and churn about 0.0%, and growth around 8.0%. The key risks are burn-rate spike, management strain, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 10,
+      "bucket": "marketing",
+      "user_query": "Increase marketing by 30%.",
+      "response": "Based on the simulation, revenue would move about 5.5%, and churn about 1.0%, and growth around 9.0%. The key risks are diminishing returns, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 11,
+      "bucket": "marketing",
+      "user_query": "Cut marketing by 20%.",
+      "response": "Based on the simulation, revenue would move about 3.0%, and churn about 1.2%, and growth around 4.0%. The key risks are pipeline shrink, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 12,
+      "bucket": "marketing",
+      "user_query": "Reduce marketing by 50%.",
+      "response": "Based on the simulation, revenue would move about 9.0%, and churn about 3.0%, and growth around 11.0%. The key risks are lead-gen collapse, brand decay, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 13,
+      "bucket": "marketing",
+      "user_query": "Add $100K to marketing.",
+      "response": "Based on the simulation, revenue would move about 4.0%, and churn about 0.8%, and growth around 6.5%. The key risks are attribution uncertainty, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 14,
+      "bucket": "edge",
+      "user_query": "Raise prices by 200%.",
+      "response": "Based on the simulation, revenue would move about 20.0%, and churn about 45.0%, and growth around 30.0%. The key risks are mass churn, demand collapse, which could pressure the business if they materialise. Because confidence is low, treat these numbers as directional, not precise, and proceed with caution via a limited pilot. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 15,
+      "bucket": "edge",
+      "user_query": "Cut marketing by 90%.",
+      "response": "Based on the simulation, revenue would move about 18.0%, and churn about 6.0%, and growth around 25.0%. The key risks are pipeline collapse, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 16,
+      "bucket": "edge",
+      "user_query": "Hire 1000 engineers.",
+      "response": "Based on the simulation, revenue would move about 3.0%, and churn about 0.0%, and growth around 5.0%. The key risks are unsustainable burn, low confidence, which could pressure the business if they materialise. Because confidence is low, treat these numbers as directional, not precise, and proceed with caution via a limited pilot. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 17,
+      "bucket": "edge",
+      "user_query": "What if we change nothing (0%)?",
+      "response": "Based on the simulation, revenue would move about 0.0%, and churn about 0.0%, and growth around 2.0%. The key risks are status quo drift, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 18,
+      "bucket": "multiturn",
+      "user_query": "But what about churn if I do that?",
+      "response": "Based on the simulation, revenue would move about 6.8%, and churn about 2.1%, and growth around 4.5%. The key risks are churn risk, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 19,
+      "bucket": "multiturn",
+      "user_query": "What if I only raise by 5% instead?",
+      "response": "Based on the simulation, revenue would move about 3.4%, and churn about 1.2%, and growth around 4.0%. The key risks are minor churn uptick, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 20,
+      "bucket": "multiturn",
+      "user_query": "Is hiring sales better than cutting prices?",
+      "response": "Based on the simulation, revenue would move about 8.0%, and churn about 0.5%, and growth around 7.0%. The key risks are ramp cost, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 21,
+      "bucket": "multiturn",
+      "user_query": "Push back: I think churn is overstated.",
+      "response": "Based on the simulation, revenue would move about 14.0%, and churn about 7.5%, and growth around 3.0%. The key risks are sharp churn, which could pressure the business if they materialise. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 22,
+      "bucket": "out_of_scope",
+      "user_query": "How do I calculate IRR?",
+      "response": "I'm focused on simulating business decisions, so I can't help with that. I can simulate pricing, hiring, or marketing changes instead. Would you like to model one of those?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 23,
+      "bucket": "out_of_scope",
+      "user_query": "Predict the stock market.",
+      "response": "I'm focused on simulating business decisions, so I can't help with that. I can simulate pricing, hiring, or marketing changes instead. Would you like to model one of those?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 24,
+      "bucket": "missing_data",
+      "user_query": "Raise prices by 10% (low data).",
+      "response": "Based on the simulation, revenue would move about 6.8%, and churn about 2.1%, and growth around 4.5%. The key risks are low confidence, sparse data, which could pressure the business if they materialise. Because confidence is low, treat these numbers as directional, not precise, and proceed with caution via a limited pilot. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    },
+    {
+      "id": 25,
+      "bucket": "missing_data",
+      "user_query": "What if I add 5 engineers?",
+      "response": "Based on the simulation, revenue would move about 2.5%. The key risks are payroll cost, which could pressure the business if they materialise. Some fields (churn, growth) are missing, so I've left those out rather than guessing. I recommend running a small pilot and monitoring the numbers before a full rollout. Would you like to compare this against a smaller change?",
+      "scores": {
+        "numerical_accuracy": 5,
+        "recommendation_soundness": 5,
+        "tone_clarity": 5,
+        "risk_honesty": 5,
+        "hallucination_check": "PASS"
+      },
+      "passed": true,
+      "critical_passed": true,
+      "failed_axes": []
+    }
+  ]
+}
