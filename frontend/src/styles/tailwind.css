@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,19 +7,75 @@
 @layer base {
   body {
     @apply bg-surface-muted text-brand-navy font-sans antialiased;
+    /* Subtle brand mesh wash behind the whole app. */
+    background-image: theme("backgroundImage.grad-mesh");
+    background-attachment: fixed;
+  }
+
+  /* Tabular figures for data so numbers don't shift width. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Respect users who prefer reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-brand-orange px-5 py-2.5
-      font-medium text-white transition hover:opacity-90 disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-grad-orange px-5 py-2.5
+      font-semibold text-white shadow-glow transition-all duration-200
+      hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 focus-visible:ring-offset-2
+      disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-surface-border
-      bg-white px-5 py-2.5 font-medium text-brand-navy transition hover:bg-surface-muted;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-surface-border
+      bg-white/80 px-5 py-2.5 font-medium text-brand-navy backdrop-blur transition-all duration-200
+      hover:-translate-y-0.5 hover:border-brand-navy/30 hover:shadow-card
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy/30 focus-visible:ring-offset-2
+      disabled:pointer-events-none disabled:opacity-50;
   }
+
   .card {
-    @apply rounded-xl border border-surface-border bg-white p-6 shadow-sm;
+    @apply rounded-2xl border border-white/60 bg-white p-6 shadow-card;
+  }
+  /* Cards that lift on hover (clickable / highlighted). */
+  .card-interactive {
+    @apply card transition-all duration-200 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+
+  /* Frosted-glass surface for sticky bars and overlays. */
+  .glass {
+    @apply border-white/40 bg-white/70 backdrop-blur-xl;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-brand-orange/20
+      bg-brand-orange/10 px-3 py-1 text-xs font-semibold text-brand-orange;
+  }
+
+  /* Thin gradient accent bar for the top of feature cards. */
+  .accent-bar {
+    @apply h-1 w-10 rounded-full bg-grad-orange;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-grad-orange bg-clip-text text-transparent;
+  }
+  /* Staggered entrance for grids/lists (set --i on each child). */
+  .stagger {
+    animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--i, 0) * 70ms);
   }
 }

@@ -71,8 +71,15 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6" ref={dashRef}>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Scenario comparison</h1>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-brand-navy">
+            Scenario <span className="text-gradient">comparison</span>
+          </h1>
+          <p className="mt-1 text-sm text-brand-navy/50">
+            {data.scenarios.length} saved scenario{data.scenarios.length === 1 ? "" : "s"} · best/worst per metric highlighted below.
+          </p>
+        </div>
         <div className="flex gap-2">
           <button
             className="btn-secondary"
@@ -93,8 +100,10 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {data.scenarios.map((s) => (
-          <ScenarioCard key={s.id} scenario={s} />
+        {data.scenarios.map((s, i) => (
+          <div key={s.id} className="stagger" style={{ "--i": i }}>
+            <ScenarioCard scenario={s} />
+          </div>
         ))}
       </div>
 
