@@ -1,41 +1,42 @@
+"""DecisionTwin FastAPI application entrypoint."""
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import (
-    health,
-    analytics,
-    predict,
-    datasets,
-    statistics,
-    simulation,
-)
+from app.config import settings
+from app.db import init_db
+from app.routers import analytics, chat, datasets, health, scenarios, simulate
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Create tables on startup for local/dev (production relies on Alembic).
+    await init_db()
+    yield
+
 
 app = FastAPI(
     title="DecisionTwin API",
-    version="1.0.0"
+    version="1.0.0",
+    description="AI-powered decision-simulation copilot — application layer.",
+    lifespan=lifespan,
 )
 
-# CORS for React Frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173"
-    ],
+    allow_origins=settings.cors_origin_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Routers
-app.include_router(health.router)
-app.include_router(analytics.router)
-app.include_router(predict.router)
-app.include_router(datasets.router)
-app.include_router(statistics.router)
-app.include_router(simulation.router)
+# All API endpoints live under /v1 (matches VITE_API_BASE_URL).
+API_PREFIX = "/v1"
+for r in (health, datasets, analytics, simulate, chat, scenarios):
+    app.include_router(r.router, prefix=API_PREFIX)
+
 
 @app.get("/")
 def root():
-    return {
-        "message": "DecisionTwin Backend Running"
-    }
+    return {"service": "DecisionTwin API", "docs": "/docs", "version": "1.0.0"}

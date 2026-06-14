@@ -1,47 +1,34 @@
-from fastapi import APIRouter, UploadFile, File
-import pandas as pd
-import os
+"""Dataset upload and preview endpoints."""
+from fastapi import APIRouter, Depends, File, Form, UploadFile
+from sqlalchemy.ext.asyncio import AsyncSession
 
-router = APIRouter()
+from app.deps import db_session
+from app.schemas.dataset import PreviewResponse, UploadResponse
+from app.services import ingestion
 
-UPLOAD_FOLDER = "uploads"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
-# Store uploaded datasets
-dataset_store = {}
+router = APIRouter(prefix="/datasets", tags=["Datasets"])
 
 
-@router.post("/datasets/upload")
-async def upload_dataset(file: UploadFile = File(...)):
-    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+@router.post("/upload", response_model=UploadResponse)
+async def upload_dataset(
+    file: UploadFile = File(...),
+    dataset_name: str = Form(...),
+    file_type: str = Form("sales"),
+    user_session_id: str | None = Form(None),
+    session: AsyncSession = Depends(db_session),
+):
+    raw = await file.read()
+    return await ingestion.ingest_csv(
+        session,
+        raw=raw,
+        dataset_name=dataset_name,
+        file_type=file_type,
+        user_session_id=user_session_id,
+    )
 
-    with open(file_path, "wb") as buffer:
-        buffer.write(await file.read())
 
-    dataset_id = len(dataset_store) + 1
-    dataset_store[dataset_id] = file_path
-
-    return {
-        "status": "success",
-        "dataset_id": dataset_id,
-        "filename": file.filename,
-        "message": "Dataset uploaded successfully"
-    }
-
-
-@router.get("/datasets/{dataset_id}/preview")
-def preview_dataset(dataset_id: int):
-
-    if dataset_id not in dataset_store:
-        return {"error": "Dataset not found"}
-
-    file_path = dataset_store[dataset_id]
-
-    df = pd.read_csv(file_path)
-
-    return {
-        "status": "success",
-        "dataset_id": dataset_id,
-        "columns": list(df.columns),
-        "preview": df.head(5).to_dict(orient="records")
-    }
+@router.get("/{dataset_id}/preview", response_model=PreviewResponse)
+async def preview_dataset(
+    dataset_id: str, session: AsyncSession = Depends(db_session)
+):
+    return await ingestion.get_preview(session, dataset_id)

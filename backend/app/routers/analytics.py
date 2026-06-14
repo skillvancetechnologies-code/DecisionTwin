@@ -1,15 +1,14 @@
-from fastapi import APIRouter
-from app.services.ml_service import get_baseline_metrics
+"""Baseline analytics endpoint (Redis-cached for 1 hour)."""
+from fastapi import APIRouter, Depends
+from sqlalchemy.ext.asyncio import AsyncSession
 
-router = APIRouter()
+from app.deps import db_session
+from app.schemas.dataset import BaselineResponse
+from app.services import ingestion
+
+router = APIRouter(prefix="/analytics", tags=["Analytics"])
 
 
-@router.get("/analytics")
-def analytics():
-
-    metrics = get_baseline_metrics()
-
-    return {
-        "status": "success",
-        "result": metrics
-    }
+@router.get("/baseline/{dataset_id}", response_model=BaselineResponse)
+async def baseline(dataset_id: str, session: AsyncSession = Depends(db_session)):
+    return await ingestion.get_baseline(session, dataset_id)
