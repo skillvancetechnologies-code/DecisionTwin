@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-muted text-brand-navy font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand-orange px-5 py-2.5
+      font-medium text-white transition hover:opacity-90 disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-surface-border
+      bg-white px-5 py-2.5 font-medium text-brand-navy transition hover:bg-surface-muted;
+  }
+  .card {
+    @apply rounded-xl border border-surface-border bg-white p-6 shadow-sm;
+  }
+}

@@ -1,16 +1,43 @@
-# React + Vite
+# DecisionTwin — Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page app: landing, CSV upload, baseline dashboard, simulation,
+streaming copilot chat, and a scenario comparison dashboard.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 19 · Vite · TailwindCSS 3 (frozen design tokens) · React Router 6 ·
+Zustand · Recharts · TanStack Table · react-dropzone · react-markdown ·
+Papaparse / jsPDF / html2canvas (client-side export) · axios.
 
-## React Compiler
+## Develop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+cp .env.example .env.local   # VITE_API_BASE_URL=http://localhost:8000/v1
+npm run dev                  # http://localhost:5173
+npm run build                # production build → dist/
+npm run lint
+```
 
-## Expanding the ESLint configuration
+## Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+  api/           client + datasets/simulate/chat/scenarios
+  components/     layout · forms · cards · chat · charts · dashboard · scenario · ui
+  hooks/          useDataset · useSimulation · useChatStream
+  lib/            formatters · exporters/{csv,pdf}
+  pages/          Landing · Upload · Baseline · Simulate · Chat · Dashboard · NotFound
+  store/          appStore (Zustand)
+  styles/         tailwind.css
+```
+
+## Routes
+
+`/` · `/upload` · `/baseline/:datasetId` · `/simulate/:datasetId` ·
+`/chat/:sessionId` · `/dashboard` · `*` (404)
+
+## Deploy (Vercel)
+
+Set `VITE_API_BASE_URL` to the deployed backend `/v1` URL. SPA fallback routing
+is configured in `vercel.json`.
