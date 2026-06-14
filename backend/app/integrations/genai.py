@@ -17,12 +17,17 @@ from io import BytesIO
 from typing import Any
 
 try:  # Production: real GenAI package
-    from dt_genai.query_parser import parse as parse_query  # type: ignore
+    from dt_genai.query_parser import parse as _dt_parse  # type: ignore
     from dt_genai.copilot import chat as copilot_chat  # type: ignore
     from dt_genai.formatter import format_response  # type: ignore
     from dt_genai.report_generator import build_pdf  # type: ignore
 
     USING_REAL_GENAI = True
+
+    def parse_query(user_message: str) -> dict:
+        """Normalize dt_genai's ParsedQuery model to the documented dict contract."""
+        result = _dt_parse(user_message)
+        return result.model_dump() if hasattr(result, "model_dump") else dict(result)
 except ImportError:
     USING_REAL_GENAI = False
 

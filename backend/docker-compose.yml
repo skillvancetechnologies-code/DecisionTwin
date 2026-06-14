@@ -21,13 +21,18 @@ services:
       - "6379:6379"
 
   app:
-    build: .
+    build:
+      # Repo root so the image can also install the sibling genai/ package.
+      context: ..
+      dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
     environment:
       DATABASE_URL: postgresql+asyncpg://decisiontwin:decisiontwin@db:5432/decisiontwin
       REDIS_URL: redis://redis:6379
       CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      # GenAI copilot (dt_genai → Mistral). Empty = deterministic LLM-free fallback.
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
     depends_on:
       db:
         condition: service_healthy

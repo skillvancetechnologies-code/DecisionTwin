@@ -28,9 +28,15 @@ dashboard.
 cd backend
 python -m venv .venv && source .venv/Scripts/activate   # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
+pip install -e ../genai          # the dt_genai GenAI package (copilot + PDF report)
 uvicorn app.main:app --reload --port 8000
 # http://localhost:8000/docs
 ```
+
+> Without `pip install -e ../genai` the backend still runs — the GenAI adapter
+> uses a deterministic fallback. Install it to get the real Mistral copilot.
+> Set `MISTRAL_API_KEY` in `backend/.env` to call the live LLM (otherwise the
+> copilot returns a deterministic, LLM-free reply).
 
 **Frontend**:
 ```bash
@@ -56,6 +62,13 @@ backend consumes them through thin adapters in `backend/app/integrations/`. When
 those packages are not installed, the adapters fall back to reference
 implementations that compute real values from the uploaded data — so the full
 product runs today, and the real modules drop in without touching any routers.
+
+`dt_genai` lives in `genai/` in this repo. Install it with `pip install -e ../genai`
+(local dev) — the Docker image installs it automatically. It exposes four stable
+functions the backend calls: `parse` (query → structured decision), `chat`
+(streaming copilot), `format_response` (structured summary), and `build_pdf`
+(scenario report). It uses Mistral (`open-mistral-7b`) and reads `MISTRAL_API_KEY`
+from the environment, degrading to deterministic output when no key is set.
 
 ## Deployment
 

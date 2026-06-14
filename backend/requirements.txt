@@ -10,6 +10,11 @@ alembic>=1.13
 redis>=5.0
 pandas>=2.2
 reportlab>=4.2
+# GenAI layer. Installed from the sibling ../genai package (see README).
+# Pulls in mistralai + python-dotenv. The adapter in app/integrations/genai.py
+# falls back to a deterministic copilot if this is not installed.
+mistralai>=0.4,<1.0
+python-dotenv>=1.0
 # dev / test
 pytest>=8.2
 pytest-asyncio>=0.23

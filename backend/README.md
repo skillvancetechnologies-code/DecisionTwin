@@ -12,6 +12,7 @@ touching the routers.
 cd backend
 python -m venv .venv && source .venv/Scripts/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+pip install -e ../genai          # dt_genai GenAI package (optional; fallback otherwise)
 uvicorn app.main:app --reload --port 8000
 # Swagger UI: http://localhost:8000/docs
 ```
@@ -34,7 +35,7 @@ Copy `.env.example` to `.env`. All values are optional locally.
 |-----|---------|
 | `DATABASE_URL` | `postgresql+asyncpg://…` in prod; blank → SQLite |
 | `REDIS_URL` | `redis://…`; blank → in-process cache |
-| `OPENAI_API_KEY`, `GENAI_MODEL` | consumed by the GenAI module |
+| `MISTRAL_API_KEY`, `GENAI_MODEL` | consumed by the dt_genai copilot; blank → deterministic fallback |
 | `CORS_ORIGINS` | comma-separated allowed frontend origins |
 
 ## API (all under `/v1`)

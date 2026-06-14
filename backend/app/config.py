@@ -1,4 +1,5 @@
 """Application settings loaded from environment / .env via pydantic-settings."""
+import os
 from functools import lru_cache
 
 from pydantic import model_validator
@@ -23,8 +24,11 @@ class Settings(BaseSettings):
     redis_url: str = ""
 
     # GenAI module config (consumed by the dt_genai package when installed).
-    openai_api_key: str = ""
-    genai_model: str = "gpt-4o-mini"
+    # dt_genai uses Mistral (open-mistral-7b) per the PM decision and reads
+    # MISTRAL_API_KEY from the environment. Without a key it degrades to a
+    # deterministic, LLM-free response so the app still runs locally.
+    mistral_api_key: str = ""
+    genai_model: str = "open-mistral-7b"
 
     # Comma-separated list of allowed CORS origins.
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
@@ -36,6 +40,11 @@ class Settings(BaseSettings):
         # Treat empty env values (e.g. DATABASE_URL=) as "use the default".
         if not self.database_url.strip():
             self.database_url = DEFAULT_DATABASE_URL
+        # dt_genai reads MISTRAL_API_KEY straight from os.environ. When the key
+        # only comes from backend/.env (via pydantic-settings), export it so the
+        # GenAI package picks it up regardless of the process working directory.
+        if self.mistral_api_key.strip():
+            os.environ.setdefault("MISTRAL_API_KEY", self.mistral_api_key.strip())
         return self
 
     @property
