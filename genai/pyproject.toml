@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dt_genai"
+version = "0.6.0"
+description = "DecisionTwin Gen AI layer: query parser, copilot, formatter, report generator."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.5",
+    "python-dotenv>=1.0",
+    "mistralai>=0.4,<1.0",
+    "reportlab>=4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+]
+
+[tool.setuptools]
+packages = ["dt_genai", "dt_genai.prompts", "dt_genai.evaluation"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

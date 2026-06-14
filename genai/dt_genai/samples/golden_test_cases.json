@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "category": "Finance",
+    "scenario": "Revenue declined by 20% over the last quarter",
+    "expected_risk": "High"
+  },
+  {
+    "id": 2,
+    "category": "Finance",
+    "scenario": "Profit turned negative due to rising operational costs",
+    "expected_risk": "High"
+  },
+  {
+    "id": 3,
+    "category": "Finance",
+    "scenario": "Cash flow shortages are affecting daily operations",
+    "expected_risk": "High"
+  },
+  {
+    "id": 4,
+    "category": "Finance",
+    "scenario": "Sales growth slowed significantly this year",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 5,
+    "category": "Finance",
+    "scenario": "Operational expenses increased by 15%",
+    "expected_risk": "Medium"
+  },
+
+  {
+    "id": 6,
+    "category": "HR",
+    "scenario": "Employee attrition increased by 25%",
+    "expected_risk": "High"
+  },
+  {
+    "id": 7,
+    "category": "HR",
+    "scenario": "Employee productivity declined across departments",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 8,
+    "category": "HR",
+    "scenario": "Hiring process delays caused staffing shortages",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 9,
+    "category": "HR",
+    "scenario": "Employee satisfaction scores dropped significantly",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 10,
+    "category": "HR",
+    "scenario": "Training participation rates decreased",
+    "expected_risk": "Low"
+  },
+
+  {
+    "id": 11,
+    "category": "Marketing",
+    "scenario": "Lead generation dropped by 30%",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 12,
+    "category": "Marketing",
+    "scenario": "Marketing campaigns produced low engagement",
+    "expected_risk": "Low"
+  },
+  {
+    "id": 13,
+    "category": "Marketing",
+    "scenario": "Customer acquisition cost increased sharply",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 14,
+    "category": "Marketing",
+    "scenario": "Brand awareness declined in key markets",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 15,
+    "category": "Marketing",
+    "scenario": "Social media engagement decreased by 40%",
+    "expected_risk": "Low"
+  },
+
+  {
+    "id": 16,
+    "category": "Customer",
+    "scenario": "Customer churn increased by 35%",
+    "expected_risk": "High"
+  },
+  {
+    "id": 17,
+    "category": "Customer",
+    "scenario": "Customer complaints increased significantly",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 18,
+    "category": "Customer",
+    "scenario": "Average customer satisfaction score dropped below target",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 19,
+    "category": "Customer",
+    "scenario": "Customer retention rates declined",
+    "expected_risk": "Low"
+  },
+  {
+    "id": 20,
+    "category": "Customer",
+    "scenario": "Repeat purchase rates declined",
+    "expected_risk": "Medium"
+  },
+
+  {
+    "id": 21,
+    "category": "Operations",
+    "scenario": "Supply chain disruptions delayed product delivery",
+    "expected_risk": "High"
+  },
+  {
+    "id": 22,
+    "category": "Operations",
+    "scenario": "Inventory shortages affected order fulfillment",
+    "expected_risk": "High"
+  },
+  {
+    "id": 23,
+    "category": "Operations",
+    "scenario": "Production efficiency declined by 20%",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 24,
+    "category": "Operations",
+    "scenario": "Vendor performance issues impacted operations",
+    "expected_risk": "Medium"
+  },
+  {
+    "id": 25,
+    "category": "Operations",
+    "scenario": "Logistics costs increased unexpectedly",
+    "expected_risk": "Medium"
+  }
+]
